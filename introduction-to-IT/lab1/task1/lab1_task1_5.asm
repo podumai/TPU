@@ -3,7 +3,7 @@ ORG 100h
 val_a EQU 2
 val_b EQU -1
 val_c EQU 5
-bit_mask EQU 0111111111111110b
+bit_mask EQU 0111111111111111b
 bit_rotate EQU 2
 
 DIV_CONST DW 2
@@ -21,6 +21,7 @@ main:
     DEC DI
     IDIV DIV_CONST
     AND AX, bit_mask
+    OR AX, 1
     ROL AX, bit_rotate
 
     MOV SP, BP
