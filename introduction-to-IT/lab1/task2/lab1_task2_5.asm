@@ -11,23 +11,23 @@ main:
     MOV BP, SP
     SUB SP, 6
     
-    MOV byte_ptr [BP - val_a], -1
-    MOV byte_ptr [BP - val_b], 2
-    MOV byte_ptr [BP - val_c], 3
+    MOV byte ptr [BP - val_a], -1
+    MOV byte ptr [BP - val_b], 2
+    MOV byte ptr [BP - val_c], 3
                               
-    MOV AL, byte_ptr [BP - val_a]
+    MOV AL, byte ptr [BP - val_a]
     CBW 
     MOV DI, AX
     CALL valid_a
     TEST AX, AX
     JZ .L3
-    MOV AL, byte_ptr [BP - val_b]
+    MOV AL, byte ptr [BP - val_b]
     CBW
     MOV DI, AX
     CALL valid_b
     TEST AX, AX
     JZ .L3
-    MOV AL, byte_ptr [BP - val_c]
+    MOV AL, byte ptr [BP - val_c]
     CBW
     MOV DI, AX
     CALL valid_c
